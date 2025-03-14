@@ -11,7 +11,8 @@ import os
 class NotesApp(App):
     def build(self):
         # Main layout
-        self.main_layout = BoxLayout(orientation='vertical', padding=10, spacing=10)
+        self.main_layout = BoxLayout(orientation='vertical', 
+                                     padding=10, spacing=10)
         
         # Title
         self.main_layout.add_widget(Label(
@@ -23,7 +24,7 @@ class NotesApp(App):
         
         # Note input area
         self.note_input = TextInput(
-            hint_text='Write your note here...',
+            hint_text='Write your note here',
             size_hint=(1, None),
             height=100,
             multiline=True
@@ -64,15 +65,13 @@ class NotesApp(App):
                 height=100,
                 spacing=5
             )
-            
             # Note text
             note_text = TextInput(
                 text=self.note_input.text,
                 multiline=True,
                 readonly=True
             )
-            
-            # Delete button
+             # Delete button
             delete_button = Button(
                 text='Delete',
                 size_hint_x=0.2,
